@@ -12,35 +12,18 @@ game.state.add('play', {
         this.game.load.image('spongegar', 'assets/meme-enemies/spongegar.png');
         this.game.load.image('dang-daniel', 'assets/meme-enemies/dang-daniel.png');
         this.game.load.image('nyan-cat', 'assets/meme-enemies/nyan-cat.png');
-        this.game.load.image('dune_crawler', 'assets/allacrost_enemy_sprites/dune_crawler.png');
-        this.game.load.image('green_slime', 'assets/allacrost_enemy_sprites/green_slime.png');
-        this.game.load.image('nagaruda', 'assets/allacrost_enemy_sprites/nagaruda.png');
-        this.game.load.image('rat', 'assets/allacrost_enemy_sprites/rat.png');
-        this.game.load.image('scorpion', 'assets/allacrost_enemy_sprites/scorpion.png');
-        this.game.load.image('skeleton', 'assets/allacrost_enemy_sprites/skeleton.png');
-        this.game.load.image('snake', 'assets/allacrost_enemy_sprites/snake.png');
-        this.game.load.image('spider', 'assets/allacrost_enemy_sprites/spider.png');
-        this.game.load.image('stygian_lizard', 'assets/allacrost_enemy_sprites/stygian_lizard.png');
-        this.game.load.image('dang-daniel', 'assets/meme-enemies/dang-daniel.png');
-	
-        // Daniel's Images
-
-	this.game.load.image('john-cena', 'assets/meme-enemies/john-cena.png');
-	this.game.load.image('spongegar', 'assets/meme-enemies/spongegar.png');
-        this.game.load.image('dat-boi', 'assets/meme-enemies/dat-boi.png');
-        this.game.load.image('lenny-face', 'assets/meme-enemies/lenny-face.png'); 
-        this.game.load.image('dang-daniel', 'assets/meme-enemies/dang-daniel.png');
-        this.game.load.image('nyan-cat', 'assets/meme-enemies/nyan-cat.png');
-        this.game.load.image('crazy-face', 'assets/meme-enemies/crazy-face.png');
-
-
+        this.game.load.image('doge', 'assets/meme-enemies/doge.png');
+        this.game.load.image('chubby-bubbles', 'assets/meme-enemies/chubby-bubbles.png')
+        this.game.load.image('trollface', 'assets/meme-enemies/trollface.png')
+        this.game.load.image('yuno', 'assets/meme-enemies/yuno.png')
+        this.game.load.image('grumpy-cat', 'assets/meme-enemies/grumpy-cat.png')
 
         this.game.load.image('coin', 'assets/coin-ideas/coin.png');
 
         this.game.load.image('auto-memes', 'assets/pics/auto-memes.png');
         this.game.load.image('better-memes', 'assets/pics/better-memes.png');
 
-this.game.load.script('webfont', '//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js');
+        this.game.load.script('webfont', '//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js');
 
 
 
@@ -118,18 +101,15 @@ this.game.load.script('webfont', '//ajax.googleapis.com/ajax/libs/webfont/1.4.7/
             {name: 'Dat Boi',             image: 'dat-boi',           maxHealth: 35},
             {name: 'Lenny',               image: 'lenny-face',        maxHealth: 2},
             {name: 'Spongegar',           image: 'spongegar',         maxHealth: 10},
-            {name: 'Dang Daniel',         image: 'dang-daniel',       maxHealth: 5},
+            {name: 'D##n Daniel',         image: 'dang-daniel',       maxHealth: 5},
             {name: 'Nyan Cat',            image: 'nyan-cat',          maxHealth: 15},
-            //{name: 'Dune Crawler',      image: 'dune_crawler',      maxHealth: 8},
-            //{name: 'Green Slime',       image: 'green_slime',       maxHealth: 3},
-            //{name: 'Nagaruda',          image: 'nagaruda',          maxHealth: 13},
-            //{name: 'Rat',               image: 'rat',               maxHealth: 2},
-            //{name: 'Scorpion',          image: 'scorpion',          maxHealth: 2},
-            //{name: 'Skeleton',          image: 'skeleton',          maxHealth: 6},
-            //{name: 'Snake',             image: 'snake',             maxHealth: 4},
-            //{name: 'Spider',            image: 'spider',            maxHealth: 4},
-            //{name: 'Stygian Lizard',    image: 'stygian_lizard',    maxHealth: 20}
-        ];
+            {name: 'Doge',                image: 'doge',              maxHealth: 15},
+            {name: 'Chubby Bubbles Girl', image: 'chubby-bubbles',    maxHealth: 15},
+            {name: 'Troll Face',          image: 'trollface',         maxHealth: 10},
+            {name: 'Y U NO',              image: 'yuno',              maxHealth: 30},
+            {name: 'Grumpy Cat',          image: 'grumpy-cat',              maxHealth: 10},
+       ];
+        
         this.monsters = this.game.add.group();
 
         var monster;
@@ -210,7 +190,7 @@ fill: '#fff',
 
         // setup the world progression display
         this.levelUI = this.game.add.group();
-        this.levelUI.position.setTo(this.game.world.width - 200, 30);
+        this.levelUI.position.setTo(this.game.world.width - 150, 30);
         this.levelText = this.levelUI.addChild(this.game.add.text(0, 0, 'Level: ' + this.level, {
             font: '24px Arial Black',
             fill: '#fff',
