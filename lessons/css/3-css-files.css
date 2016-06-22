@@ -1,0 +1,20 @@
+/* CSS file for lesson 3 */
+
+
+.container {
+    color: blue;
+    font-weight: bold;
+}
+
+.container-two {
+    padding: 15px 15px 15px 15px;
+    border: 1px solid black;
+}
+
+h1 {
+    color: red;
+}
+
+#our-custom-title {
+    text-decoration: underline;
+}

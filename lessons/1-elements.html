@@ -1,0 +1,85 @@
+<!--
+This is a basic example of what HTML looks like.
+
+The things within the <>s are called Elements, or more commonly, tags.
+Nearly all of them must have a closing </> tag, like if you look at the <title></title> above.
+
+Things between the opening and closing tag are "inside" of them.  For instance,
+the <title> is inside of the <head> tags.
+
+
+Notice how things are indented.
+The <html> and </html> are lined up, as well as the HEAD and BODY tags.
+This isn't mandatory, but it's the way everyone does it.  It keeps things nice
+and neat in your code so things are easy for you to find later.
+
+---- A look at the document ----
+
+<!DOCTYPE html>
+This tells the browser that it's looking at an html file type.  It doesn't have a closing tag
+( </!DOCTYPE> doesn't exist )
+
+
+<html></html>
+This is mandatory.  Notice the closing tag at the end of the document.
+
+
+<head></head>
+This is mandatory, and contains scripts and styles, like .js and .css files.  These things aren't visible to site visitors.
+
+<title></title>
+This sets the label that goes in the browser tab.  Not mandatory, but very important.
+
+
+<body></body>
+This contains the content that people will see.  This is mandatory
+
+
+<div></div>
+These are major divisions in the content.  They are generic containers, so they're very common.
+
+You'll notice that the divs above have classes.  Classes are custom labels we can name just about anything in HTML.
+These labels are used to tell CSS and Javascript what to modify.
+
+Classes can go on just about anything inside the BODY, including the BODY itself.
+They're used to tell the CSS styles what to color or how to position things.
+
+Like, we might tell it to make the DIV with the class "container" blue text,
+and then "container-two" can have red text.  This way the whole page won't have
+blue text.
+
+
+<h1></h1>
+These header tags come in several sizes: h1, h2, h3, h4, with h1 being the biggest and most important, down to even an h6, which is dinky and pretty much useless.
+
+
+<p></p>
+This tells the browser that this is a paragraph.
+
+
+<a href=""></a>
+This is a link, and the "a" stands for "anchor," but everyone still calls it a link tag.
+This has a "href" attribute where you put the URL of the place you want it to go when
+the user clicks it.
+-->
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Lesson 1</title>
+  </head>
+
+  <body>
+    <h1>Lesson 1: Elements (This is a header)</h1>
+
+    <div class="container">
+      <p>This is a paragraph tag.</p>
+    </div>
+
+    <div class="container-two">
+      <p> This is a <a href="http://google.com">Link</a>.</p>
+    </div>
+
+  </body>
+</html>

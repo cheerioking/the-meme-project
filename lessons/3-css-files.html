@@ -1,0 +1,60 @@
+<!--
+You can make separate files for your CSS, which is really handy
+because it keeps your html file nice and neat.
+
+Tag we use to link to the CSS file. It's a <link>.
+
+Even though it's a link tag, don't mistake these for <a></a> tags.
+
+See how it doesn't have a </link> after it.  This is called a
+"self-closing" tag.  There are a few of these, but generally, tags are
+paired with closing tags.
+
+----------
+
+The "rel" attribute tells the browser that we're linking to a stylesheet.
+CSS stands for "Cascading Style Sheets."  Basically, this means you can
+have more than one file that can give styles to your document.
+Another option to put in the "rel" is "javascript," for instance.
+
+----------
+
+Finally, the <link> has a "href," much like an <a></a>.  This tells the
+browser where the file is found.
+
+----------
+
+Now, go to the folder called "css" and open "3-css-files.css."
+
+You'll see that it contains the same styles from Lesson 2, which is why
+the page looks exactly the same.  If you change anything in this file, the
+new styles (like a color or something) will appear the next time you reload
+the page in the browser.
+-->
+
+
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <title>Lesson 3</title>
+  </head>
+
+  <!-- This is a link to our CSS file. -->
+  <link rel="stylesheet" href="css/3-css-files.css" />
+
+
+  <body>
+    <h1 id="our-custom-title">Lesson 3: CSS Files</h1>
+
+    <div class="container">
+      <p>This is a paragraph tag.</p>
+    </div>
+
+    <div class="container-two">
+      <p> This is a <a href="http://google.com">Link</a>.</p>
+    </div>
+
+  </body>
+</html>

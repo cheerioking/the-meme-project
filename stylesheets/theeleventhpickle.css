@@ -1,3 +1,26 @@
+@font-face {
+    font-family: 'Bangers';
+    src: url('../fonts/bangers.ttf');
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('../fonts/oswald-regular.ttf');
+}
+
+.font-load {
+    opacity: 0;
+    height: 0;
+}
+
+.bangers {
+    font-family: 'Bangers', Arial, sans-serif;
+}
+
+.oswald {
+    font-family: 'Oswald', Arial, sans-serif;
+}
+
 canvas {
     margin: 0 auto 20px;
 }

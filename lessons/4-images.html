@@ -1,0 +1,89 @@
+<!--
+This time, let's look at Images.
+
+First of all, look at how IDs and classes are distinctly separate from each other.
+We have a header (<h3>) tag with an ID of "walrus," and a div with the class of walrus.
+
+In our CSS, we've styled them differently.  The header is brown, and the div is colored green.
+
+----------
+
+We've also included an image in this page.  Images are "self-closing," which, once again means
+that there is no </img>.
+
+Like <a> links, images have a "href" attribute that points to where the image is on the internet.
+
+On our img, I've also added a class called "walrus-image."  Can you find where I put the styles for that one?
+
+---------
+
+In CSS, anything can have a width and height.  These dimensions are measured in pixels, which are very tiny
+squares of light on your screen.  In CSS, pixels are abbreviated at "px."
+
+Images have special powers in HTML in that you can set their height to "auto."  When you do this, the browser
+will adjust the height so that the image looks correct.
+
+-->
+
+
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <title>Lesson 4</title>
+  </head>
+
+  <link rel="stylesheet" href="css/3-css-files.css" />
+
+  <style>
+
+    #walrus {
+      color: brown;
+    }
+
+    .walrus-image-one {
+      width: 400px;
+      height: 100px;
+    }
+
+    .walrus-image-two {
+      width: 400px;
+      height: auto;
+    }
+
+    .walrus {
+      color: green
+    }
+
+  </style>
+
+  <body>
+    <h1 id="our-custom-title">Lesson 4: Images</h1>
+
+    <div class="container">
+      <p>This is a paragraph tag.</p>
+    </div>
+
+    <div class="container-two">
+      <p> This is a <a href="http://google.com">Link</a>.</p>
+    </div>
+
+    <h3 id="walrus">Walruses</h3><!-- This has an ID of "walrus" -->
+
+    <div class="walrus"><!-- This has a class of "walrus" -->
+      <p>This is a paragraph about walruses.</p>
+    </div>
+
+    <p><!-- This one has a specific height of 100 pixels. -->
+      <img class="walrus-image-one" src="https://upload.wikimedia.org/wikipedia/commons/3/37/Walrus_-_Kamogawa_Seaworld_-_1.jpg" />
+    </p>
+
+    <p><!-- This one is set to height: auto -->
+      <img class="walrus-image-two" src="https://upload.wikimedia.org/wikipedia/commons/3/37/Walrus_-_Kamogawa_Seaworld_-_1.jpg" />
+    </p>
+
+
+
+  </body>
+</html>
