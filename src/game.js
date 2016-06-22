@@ -17,6 +17,9 @@ game.state.add('play', {
         this.game.load.image('trollface', 'assets/meme-enemies/trollface.png')
         this.game.load.image('yuno', 'assets/meme-enemies/yuno.png')
         this.game.load.image('grumpy-cat', 'assets/meme-enemies/grumpy-cat.png')
+        this.game.load.image('be-like-bill', 'assets/meme-enemies/be-like-bill.png')
+        this.game.load.image('pepe', 'assets/meme-enemies/pepe.png') 
+       
 
         this.game.load.image('coin', 'assets/coin-ideas/coin.png');
 
@@ -104,12 +107,13 @@ game.state.add('play', {
             {name: 'D##n Daniel',         image: 'dang-daniel',       maxHealth: 5},
             {name: 'Nyan Cat',            image: 'nyan-cat',          maxHealth: 15},
             {name: 'Doge',                image: 'doge',              maxHealth: 15},
-            {name: 'Chubby Bubbles Girl', image: 'chubby-bubbles',    maxHealth: 15},
+            {name: 'Chubby Bubbles',      image: 'chubby-bubbles',    maxHealth: 15},
             {name: 'Troll Face',          image: 'trollface',         maxHealth: 10},
             {name: 'Y U NO',              image: 'yuno',              maxHealth: 30},
-            {name: 'Grumpy Cat',          image: 'grumpy-cat',              maxHealth: 10},
-       ];
-        
+            {name: 'Grumpy Cat',          image: 'grumpy-cat',        maxHealth: 10},
+            {name: 'Bill',                image: 'be-like-bill',      maxHealth: 2},
+            {name: 'Pepe',                image: 'pepe',              maxHealth: 40},
+        ];
         this.monsters = this.game.add.group();
 
         var monster;
