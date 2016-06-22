@@ -1,0 +1,75 @@
+<!--
+Now we're going to link to a stylesheet that is found on the internet, which is really handy.
+
+It's from a bundle called "Bootstrap" and it's used widely by developers.
+
+It uses special classes to create a nice looking layout.  You'll see some of them here.  When
+I've used them, I included a class called "bootstrap," which doesn't do anything at all.  It's just there
+so you can tell when I'm using a class that Bootstrap uses.
+
+You can go to http://getbootstrap.com/css/ and see examples of all of the things that you can
+do by adding classes to a document with Bootstrap.  Some of it gets pretty advanced, so don't let that freak you out.
+
+-->
+
+
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <title>Lesson 5</title>
+  </head>
+
+  <!-- This code sends basic styles (colors, fonts, spacing) to the page -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <!-- This sends some more specific styles -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="css/3-css-files.css" />
+
+  <style>
+
+    .walrus-image-one {
+      width: 400px;
+      height: 100px;
+    }
+
+    .walrus-image-two {
+      width: 400px;
+      height: auto;
+    }
+
+  </style>
+
+  <body class="bootstrap container">
+    <h1 id="our-custom-title">Lesson 5: Advanced Stylesheets</h1>
+
+    <h3>Walruses</h3>
+
+    <div>
+      <p>This is a paragraph about walruses.</p>
+    </div>
+
+    <div class="bootstrap row">
+
+      <div class="bootstrap col-md-4">
+        <p>
+          <img class="walrus-image-one" src="https://upload.wikimedia.org/wikipedia/commons/3/37/Walrus_-_Kamogawa_Seaworld_-_1.jpg" />
+        </p>
+      </div>
+
+      <div class="bootstrap col-md-8">
+        <p>
+          <img class="walrus-image-two" src="https://upload.wikimedia.org/wikipedia/commons/3/37/Walrus_-_Kamogawa_Seaworld_-_1.jpg" />
+        </p>
+      </div>
+
+    </div>
+
+
+
+  </body>
+</html>

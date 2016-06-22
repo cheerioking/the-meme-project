@@ -1,0 +1,100 @@
+<!--
+In CSS, you tell it to target something with a class
+named "container" putting a dot in front of it.
+
+.container {
+  color: blue;
+  font-weight: bold;
+}
+
+For instance, if you delete the dot, nothing gets styled. Try it!
+
+------------
+
+CSS can also target HTML tags in general.
+
+Here, we target every h1 on the page.  Notice that there is no
+dot before this (or anything else).
+
+h1 {
+  color: red;
+}
+
+------------
+
+Finally, CSS can target ID's.  An ID is used for items that
+only appear once on a page.  These should never get reused.
+
+<h1 id="our-custom-title">This is a header</h1>
+
+Notice in the CSS, an id has a # before it:
+
+#our-custom-title {
+  text-decoration: underline;
+}
+
+------------
+
+This is another example of styling something with a class.
+
+.container-two {
+  padding: 15px 15px 15px 15px;
+  border: 1px solid black;
+}
+
+
+Here's something interesting to try:  You can have more than one
+class on a tag.  When you do this, it takes the styles for both of them
+and combines them on the same element.
+
+Give it a shot!  Try adding "container-two" to the "container" div and see what happens.
+
+It should look like this.
+<div class="container container-two">
+
+Note that you cannot combine IDs.
+-->
+
+
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <title>Lesson 2</title>
+  </head>
+
+  <!-- This is CSS. Note that it uses the <style> tag -->
+  <style>
+    .container {
+      color: blue;
+      font-weight: bold;
+    }
+
+    .container-two {
+      padding: 15px 15px 15px 15px;
+      border: 1px solid black;
+    }
+
+    h1 {
+      color: red;
+    }
+
+    #our-custom-title {
+      text-decoration: underline;
+    }
+  </style>
+
+  <body>
+    <h1 id="our-custom-title">Lesson 2: CSS Styles</h1>
+
+    <div class="container">
+      <p>This is a paragraph tag.</p>
+    </div>
+
+    <div class="container-two">
+      <p> This is a <a href="http://google.com">Link</a>.</p>
+    </div>
+
+  </body>
+</html>
