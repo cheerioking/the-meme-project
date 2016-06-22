@@ -341,7 +341,6 @@ game.state.add('play', {
 		// update the health text
 		this.monsterHealthText.text = this.currentMonster.alive ? this.currentMonster.health + ' HP' : 'DEAD';
 	}
->>>>>>> origin/gh-pages
 });
 
 game.state.start('play');
