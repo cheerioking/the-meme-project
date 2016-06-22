@@ -2,7 +2,7 @@ var game = new Phaser.Game(900, 600, Phaser.AUTO, '');
 
 game.state.add('play', {
     preload: function() {
-        this.game.load.image('ap', 'assets/background/ap.png');
+        this.game.load.image('wc', 'assets/background/wc.png');
         
 
         this.game.load.image('john-cena', 'assets/meme-enemies/john-cena.png');
@@ -21,7 +21,7 @@ game.state.add('play', {
         this.game.load.image('pepe', 'assets/meme-enemies/pepe.png') 
        
 
-        this.game.load.image('coin', 'assets/coin-ideas/coin.png');
+        this.game.load.image('pepe-coin', 'assets/coin-ideas/pepe-coin.png');
 
         this.game.load.image('auto-memes', 'assets/pics/auto-memes.png');
         this.game.load.image('better-memes', 'assets/pics/better-memes.png');
@@ -66,7 +66,7 @@ game.state.add('play', {
 
         this.background = this.game.add.group();
         // setup each of our background layers to take the full screen
-        ['ap']
+        ['wc']
             .forEach(function(image) {
                 var bg = state.game.add.tileSprite(0, 0, state.game.world.width,
                     state.game.world.height, image, '', state.background);
@@ -178,7 +178,7 @@ game.state.add('play', {
 
         // create a pool of gold coins
         this.coins = this.add.group();
-        this.coins.createMultiple(50, 'coin', '', false);
+        this.coins.createMultiple(50, 'pepe-coin', '', false);
         this.coins.setAll('inputEnabled', true);
         this.coins.setAll('goldValue', 1);
         this.coins.callAll('events.onInputDown.add', 'events.onInputDown', this.onClickCoin, this);
