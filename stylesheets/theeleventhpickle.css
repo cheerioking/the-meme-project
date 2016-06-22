@@ -1,3 +1,11 @@
 canvas {
     margin: 0 auto 20px;
 }
+
+.green {
+  color: #1DD82E;
+}
+
+.white {
+  color: #DADADA;
+}

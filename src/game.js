@@ -1,19 +1,17 @@
-var game = new Phaser.Game(800, 600, Phaser.AUTO, '');
+var game = new Phaser.Game(900, 600, Phaser.AUTO, '');
 
 game.state.add('play', {
     preload: function() {
-        this.game.load.image('forest-back', 'assets/parallax_forest_pack/layers/parallax-forest-back-trees.png');
-        this.game.load.image('forest-lights', 'assets/parallax_forest_pack/layers/parallax-forest-lights.png');
-        this.game.load.image('forest-middle', 'assets/parallax_forest_pack/layers/parallax-forest-middle-trees.png');
-        this.game.load.image('forest-front', 'assets/parallax_forest_pack/layers/parallax-forest-front-trees.png');
+        this.game.load.image('ap', 'assets/background/ap.png');
+        
 
-        this.game.load.image('aerocephal', 'assets/allacrost_enemy_sprites/aerocephal.png');
-        this.game.load.image('arcana_drake', 'assets/allacrost_enemy_sprites/arcana_drake.png');
-        this.game.load.image('aurum-drakueli', 'assets/allacrost_enemy_sprites/aurum-drakueli.png');
-        this.game.load.image('bat', 'assets/allacrost_enemy_sprites/bat.png');
-        this.game.load.image('daemarbora', 'assets/allacrost_enemy_sprites/daemarbora.png');
-        this.game.load.image('deceleon', 'assets/allacrost_enemy_sprites/deceleon.png');
-        this.game.load.image('demonic_essence', 'assets/allacrost_enemy_sprites/demonic_essence.png');
+        this.game.load.image('john-cena', 'assets/meme-enemies/john-cena.png');
+        this.game.load.image('dat-boi', 'assets/meme-enemies/dat-boi.png');
+        this.game.load.image('crazy-face', 'assets/meme-enemies/crazy-face.png');
+        this.game.load.image('lenny-face', 'assets/meme-enemies/lenny-face.png');
+        this.game.load.image('spongegar', 'assets/meme-enemies/spongegar.png');
+        this.game.load.image('dang-daniel', 'assets/meme-enemies/dang-daniel.png');
+        this.game.load.image('nyan-cat', 'assets/meme-enemies/nyan-cat.png');
         this.game.load.image('dune_crawler', 'assets/allacrost_enemy_sprites/dune_crawler.png');
         this.game.load.image('green_slime', 'assets/allacrost_enemy_sprites/green_slime.png');
         this.game.load.image('nagaruda', 'assets/allacrost_enemy_sprites/nagaruda.png');
@@ -23,24 +21,41 @@ game.state.add('play', {
         this.game.load.image('snake', 'assets/allacrost_enemy_sprites/snake.png');
         this.game.load.image('spider', 'assets/allacrost_enemy_sprites/spider.png');
         this.game.load.image('stygian_lizard', 'assets/allacrost_enemy_sprites/stygian_lizard.png');
+        this.game.load.image('dang-daniel', 'assets/meme-enemies/dang-daniel.png');
+	
+        // Daniel's Images
 
-        this.game.load.image('gold_coin', 'assets/496_RPG_icons/I_GoldCoin.png');
+	this.game.load.image('john-cena', 'assets/meme-enemies/john-cena.png');
+	this.game.load.image('spongegar', 'assets/meme-enemies/spongegar.png');
+        this.game.load.image('dat-boi', 'assets/meme-enemies/dat-boi.png');
+        this.game.load.image('lenny-face', 'assets/meme-enemies/lenny-face.png'); 
+        this.game.load.image('dang-daniel', 'assets/meme-enemies/dang-daniel.png');
+        this.game.load.image('nyan-cat', 'assets/meme-enemies/nyan-cat.png');
+        this.game.load.image('crazy-face', 'assets/meme-enemies/crazy-face.png');
 
-        this.game.load.image('dagger', 'assets/496_RPG_icons/W_Dagger002.png');
-        this.game.load.image('swordIcon1', 'assets/496_RPG_icons/S_Sword15.png');
+
+
+        this.game.load.image('coin', 'assets/coin-ideas/coin.png');
+
+        this.game.load.image('auto-memes', 'assets/pics/auto-memes.png');
+        this.game.load.image('better-memes', 'assets/pics/better-memes.png');
+
+this.game.load.script('webfont', '//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js');
+
+
 
         // build panel for upgrades
         var bmd = this.game.add.bitmapData(250, 500);
-        bmd.ctx.fillStyle = '#9a783d';
+        bmd.ctx.fillStyle = '#FFFFFF';
         bmd.ctx.strokeStyle = '#35371c';
-        bmd.ctx.lineWidth = 12;
+        bmd.ctx.lineWidth = 2;
         bmd.ctx.fillRect(0, 0, 250, 500);
         bmd.ctx.strokeRect(0, 0, 250, 500);
         this.game.cache.addBitmapData('upgradePanel', bmd);
 
         var buttonImage = this.game.add.bitmapData(476, 48);
-        buttonImage.ctx.fillStyle = '#e6dec7';
-        buttonImage.ctx.strokeStyle = '#35371c';
+        buttonImage.ctx.fillStyle = '#E8522D';
+        buttonImage.ctx.strokeStyle = '#00000';
         buttonImage.ctx.lineWidth = 4;
         buttonImage.ctx.fillRect(0, 0, 225, 48);
         buttonImage.ctx.strokeRect(0, 0, 225, 48);
@@ -65,11 +80,11 @@ game.state.add('play', {
 
         this.background = this.game.add.group();
         // setup each of our background layers to take the full screen
-        ['forest-back', 'forest-lights', 'forest-middle', 'forest-front']
+        ['ap']
             .forEach(function(image) {
                 var bg = state.game.add.tileSprite(0, 0, state.game.world.width,
                     state.game.world.height, image, '', state.background);
-                bg.tileScale.setTo(4,4);
+                bg.tileScale.setTo(1,1);
             });
 
         this.upgradePanel = this.game.add.image(10, 70, this.game.cache.getBitmapData('upgradePanel'));
@@ -77,10 +92,10 @@ game.state.add('play', {
         upgradeButtons.position.setTo(8, 8);
 
         var upgradeButtonsData = [
-            {icon: 'dagger', name: 'Attack', level: 0, cost: 5, purchaseHandler: function(button, player) {
+            {icon: 'auto-memes', name: 'Hax', level: 0, cost: 5, purchaseHandler: function(button, player) {
                 player.clickDmg += 1;
             }},
-            {icon: 'swordIcon1', name: 'Auto-Attack', level: 0, cost: 25, purchaseHandler: function(button, player) {
+            {icon: 'better-memes', name: 'Auto Hax', level: 0, cost: 25, purchaseHandler: function(button, player) {
                 player.dps += 5;
             }}
         ];
@@ -98,36 +113,36 @@ game.state.add('play', {
         });
 
         var monsterData = [
-            {name: 'Aerocephal',        image: 'aerocephal',        maxHealth: 10},
-            {name: 'Arcana Drake',      image: 'arcana_drake',      maxHealth: 20},
-            {name: 'Aurum Drakueli',    image: 'aurum-drakueli',    maxHealth: 30},
-            {name: 'Bat',               image: 'bat',               maxHealth: 5},
-            {name: 'Daemarbora',        image: 'daemarbora',        maxHealth: 10},
-            {name: 'Deceleon',          image: 'deceleon',          maxHealth: 10},
-            {name: 'Demonic Essence',   image: 'demonic_essence',   maxHealth: 15},
-            {name: 'Dune Crawler',      image: 'dune_crawler',      maxHealth: 8},
-            {name: 'Green Slime',       image: 'green_slime',       maxHealth: 3},
-            {name: 'Nagaruda',          image: 'nagaruda',          maxHealth: 13},
-            {name: 'Rat',               image: 'rat',               maxHealth: 2},
-            {name: 'Scorpion',          image: 'scorpion',          maxHealth: 2},
-            {name: 'Skeleton',          image: 'skeleton',          maxHealth: 6},
-            {name: 'Snake',             image: 'snake',             maxHealth: 4},
-            {name: 'Spider',            image: 'spider',            maxHealth: 4},
-            {name: 'Stygian Lizard',    image: 'stygian_lizard',    maxHealth: 20}
+            {name: 'John Cena',           image: 'john-cena',         maxHealth: 10},
+            {name: 'Crazy Face',          image: 'crazy-face',        maxHealth: 5},
+            {name: 'Dat Boi',             image: 'dat-boi',           maxHealth: 35},
+            {name: 'Lenny',               image: 'lenny-face',        maxHealth: 2},
+            {name: 'Spongegar',           image: 'spongegar',         maxHealth: 10},
+            {name: 'Dang Daniel',         image: 'dang-daniel',       maxHealth: 5},
+            {name: 'Nyan Cat',            image: 'nyan-cat',          maxHealth: 15},
+            //{name: 'Dune Crawler',      image: 'dune_crawler',      maxHealth: 8},
+            //{name: 'Green Slime',       image: 'green_slime',       maxHealth: 3},
+            //{name: 'Nagaruda',          image: 'nagaruda',          maxHealth: 13},
+            //{name: 'Rat',               image: 'rat',               maxHealth: 2},
+            //{name: 'Scorpion',          image: 'scorpion',          maxHealth: 2},
+            //{name: 'Skeleton',          image: 'skeleton',          maxHealth: 6},
+            //{name: 'Snake',             image: 'snake',             maxHealth: 4},
+            //{name: 'Spider',            image: 'spider',            maxHealth: 4},
+            //{name: 'Stygian Lizard',    image: 'stygian_lizard',    maxHealth: 20}
         ];
         this.monsters = this.game.add.group();
 
         var monster;
         monsterData.forEach(function(data) {
             // create a sprite for them off screen
-            monster = state.monsters.create(1000, state.game.world.centerY, data.image);
+            monster = state.monsters.create(1500, state.game.world.centerY, data.image);
             // use the built in health component
             monster.health = monster.maxHealth = data.maxHealth;
             // center anchor
             monster.anchor.setTo(0.5, 1);
             // reference to the database
             monster.details = data;
-
+8
             //enable input so we can click it!
             monster.inputEnabled = true;
             monster.events.onInputDown.add(state.onClickMonster, state);
@@ -139,16 +154,16 @@ game.state.add('play', {
 
         // display the monster front and center
         this.currentMonster = this.monsters.getRandom();
-        this.currentMonster.position.set(this.game.world.centerX + 100, this.game.world.centerY + 50);
+        this.currentMonster.position.set(this.game.world.centerX + 100, this.game.world.centerY + 300);
 
         this.monsterInfoUI = this.game.add.group();
-        this.monsterInfoUI.position.setTo(this.currentMonster.x - 220, this.currentMonster.y + 120);
+        this.monsterInfoUI.position.setTo(this.currentMonster.x - 220, 30);
         this.monsterNameText = this.monsterInfoUI.addChild(this.game.add.text(0, 0, this.currentMonster.details.name, {
             font: '48px Arial Black',
             fill: '#fff',
             strokeThickness: 4
         }));
-        this.monsterHealthText = this.monsterInfoUI.addChild(this.game.add.text(0, 80, this.currentMonster.health + ' HP', {
+        this.monsterHealthText = this.monsterInfoUI.addChild(this.game.add.text(0, 60, this.currentMonster.health + ' HP', {
             font: '32px Arial Black',
             fill: '#ff0000',
             strokeThickness: 4
@@ -179,14 +194,14 @@ game.state.add('play', {
 
         // create a pool of gold coins
         this.coins = this.add.group();
-        this.coins.createMultiple(50, 'gold_coin', '', false);
+        this.coins.createMultiple(50, 'coin', '', false);
         this.coins.setAll('inputEnabled', true);
         this.coins.setAll('goldValue', 1);
         this.coins.callAll('events.onInputDown.add', 'events.onInputDown', this.onClickCoin, this);
 
-        this.playerGoldText = this.add.text(30, 30, 'Gold: ' + this.player.gold, {
+        this.playerGoldText = this.add.text(30, 30, 'Memes: ' + this.player.gold, {
             font: '24px Arial Black',
-            fill: '#fff',
+fill: '#fff',
             strokeThickness: 4
         });
 
@@ -195,7 +210,7 @@ game.state.add('play', {
 
         // setup the world progression display
         this.levelUI = this.game.add.group();
-        this.levelUI.position.setTo(this.game.world.centerX, 30);
+        this.levelUI.position.setTo(this.game.world.width - 200, 30);
         this.levelText = this.levelUI.addChild(this.game.add.text(0, 0, 'Level: ' + this.level, {
             font: '24px Arial Black',
             fill: '#fff',
@@ -225,7 +240,7 @@ game.state.add('play', {
 
         if (this.player.gold - getAdjustedCost() >= 0) {
             this.player.gold -= getAdjustedCost();
-            this.playerGoldText.text = 'Gold: ' + this.player.gold;
+            this.playerGoldText.text = 'Memes: ' + this.player.gold;
             button.details.level++;
             button.text.text = button.details.name + ': ' + button.details.level;
             button.costText.text = 'Cost: ' + getAdjustedCost();
@@ -239,7 +254,7 @@ game.state.add('play', {
         // give the player gold
         this.player.gold += coin.goldValue;
         // update UI
-        this.playerGoldText.text = 'Gold: ' + this.player.gold;
+        this.playerGoldText.text = 'Memes: ' + this.player.gold;
         // remove the coin
         coin.kill();
     },
@@ -272,7 +287,7 @@ game.state.add('play', {
         this.currentMonster.revive(this.currentMonster.maxHealth);
     },
     onRevivedMonster: function(monster) {
-        monster.position.set(this.game.world.centerX + 100, this.game.world.centerY + 50);
+        monster.position.set(this.game.world.centerX + 100, this.game.world.centerY + 170);
         // update the text display
         this.monsterNameText.text = monster.details.name;
         this.monsterHealthText.text = monster.health + 'HP';
