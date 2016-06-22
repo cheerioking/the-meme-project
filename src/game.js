@@ -7,7 +7,7 @@ game.state.add('play', {
 		/**
 		 * Background.
 		 */
-		this.game.load.image('g', 'assets/background/google.png');
+		this.game.load.image('google', 'assets/background/google.png');
 
 		/**
 		 * Monsters.
@@ -81,7 +81,7 @@ game.state.add('play', {
 		 */
 		this.background = this.game.add.group();
 		// setup each of our background layers to take the full screen
-		['g']
+		['google']
 			.forEach(function (image) {
 				var bg = state.game.add.tileSprite(0, 0, state.game.world.width,
 					state.game.world.height, image, '', state.background);
