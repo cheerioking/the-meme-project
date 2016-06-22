@@ -19,6 +19,8 @@ game.state.add('play', {
         this.game.load.image('grumpy-cat', 'assets/meme-enemies/grumpy-cat.png')
         this.game.load.image('be-like-bill', 'assets/meme-enemies/be-like-bill.png')
         this.game.load.image('pepe', 'assets/meme-enemies/pepe.png') 
+        this.game.load.image('patrick', 'assets/meme-enemies/patrick.png')
+        this.game.load.image('spoderman', 'assets/meme-enemies/spoderman.jpg')
        
 
         this.game.load.image('pepe-coin', 'assets/coin-ideas/pepe-coin.png');
@@ -106,14 +108,20 @@ game.state.add('play', {
             {name: 'Spongegar',           image: 'spongegar',         maxHealth: 10},
             {name: 'D##n Daniel',         image: 'dang-daniel',       maxHealth: 5},
             {name: 'Nyan Cat',            image: 'nyan-cat',          maxHealth: 15},
-            {name: 'Doge',                image: 'doge',              maxHealth: 15},
+            {name: 'Doggo',               image: 'doge',              maxHealth: 15},
             {name: 'Chubby Bubbles',      image: 'chubby-bubbles',    maxHealth: 15},
             {name: 'Troll Face',          image: 'trollface',         maxHealth: 10},
             {name: 'Y U NO',              image: 'yuno',              maxHealth: 30},
             {name: 'Grumpy Cat',          image: 'grumpy-cat',        maxHealth: 10},
             {name: 'Bill',                image: 'be-like-bill',      maxHealth: 2},
             {name: 'Pepe',                image: 'pepe',              maxHealth: 40},
+            {name: 'Patrick',             image: 'patrick',           maxHealth: 25},
+            {name: 'Spooderman',          image: 'spoderman',        maxHealth: 15},
+       
+
         ];
+        
+
         this.monsters = this.game.add.group();
 
         var monster;
