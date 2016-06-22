@@ -7,7 +7,7 @@ game.state.add('play', {
 		/**
 		 * Background.
 		 */
-		this.game.load.image('wc', 'assets/background/wc.png');
+		this.game.load.image('g', 'assets/background/google.png');
 
 		/**
 		 * Monsters.
@@ -36,7 +36,7 @@ game.state.add('play', {
 		/**
 		 * Coin.
 		 */
-		this.game.load.image('coin', 'assets/coin-ideas/coin.png');
+		this.game.load.image('pepe-coin', 'assets/coin-ideas/pepe-coin.png');
 
 		/**
 		 * Upgrades.
@@ -45,18 +45,18 @@ game.state.add('play', {
 		this.game.load.image('better-memes', 'assets/pics/better-memes.png');
 
 		// build panel for upgrades
-		var bmd = this.game.add.bitmapData(250, 500);
+		var bmd = this.game.add.bitmapData(245, 500);
 		bmd.ctx.fillStyle = '#FFFFFF';
 		bmd.ctx.strokeStyle = '#35371c';
 		bmd.ctx.lineWidth = 2;
-		bmd.ctx.fillRect(0, 0, 250, 500);
-		bmd.ctx.strokeRect(0, 0, 250, 500);
+		bmd.ctx.fillRect(0, 0, 245, 500);
+		bmd.ctx.strokeRect(0, 0, 245, 500);
 		this.game.cache.addBitmapData('upgradePanel', bmd);
 
-		var buttonImage = this.game.add.bitmapData(476, 48);
+		var buttonImage = this.game.add.bitmapData(225, 48);
 		buttonImage.ctx.fillStyle = '#E8522D';
 		buttonImage.ctx.strokeStyle = '#00000';
-		buttonImage.ctx.lineWidth = 4;
+		buttonImage.ctx.lineWidth = 2;
 		buttonImage.ctx.fillRect(0, 0, 225, 48);
 		buttonImage.ctx.strokeRect(0, 0, 225, 48);
 		this.game.cache.addBitmapData('button', buttonImage);
@@ -84,7 +84,7 @@ game.state.add('play', {
 		 */
 		this.background = this.game.add.group();
 		// setup each of our background layers to take the full screen
-		['wc']
+		['g']
 			.forEach(function (image) {
 				var bg = state.game.add.tileSprite(0, 0, state.game.world.width,
 					state.game.world.height, image, '', state.background);
@@ -208,7 +208,7 @@ game.state.add('play', {
 
 		// create a pool of gold coins
 		this.coins = this.add.group();
-		this.coins.createMultiple(50, 'coin', '', false);
+		this.coins.createMultiple(50, 'pepe-coin', '', false);
 		this.coins.setAll('inputEnabled', true);
 		this.coins.setAll('goldValue', 1);
 		this.coins.callAll('events.onInputDown.add', 'events.onInputDown', this.onClickCoin, this);
@@ -242,6 +242,8 @@ game.state.add('play', {
 			if (this.currentMonster && this.currentMonster.alive) {
 				var dmg = this.player.dps / 10;
 				this.currentMonster.damage(dmg);
+
+				this.colorHealthText();
 
 				// update the health text
 				this.monsterHealthText.text = this.currentMonster.alive ? Math.round(this.currentMonster.health) + ' HP' : 'DEAD';
@@ -326,20 +328,24 @@ game.state.add('play', {
 			dmgText.alpha = 1;
 			dmgText.tween.start();
 		}
+		this.colorHealthText();
 
+
+		// update the health text
+		this.monsterHealthText.text = this.currentMonster.alive ? this.currentMonster.health + ' HP' : 'DEAD';
+	},
+
+	colorHealthText: function() {
 		/**
 		 * Green/Yellow/Red Color Change.
 		 */
 		var medHealth = Math.ceil(this.currentMonster.maxHealth * 0.6);
 		var lowHealth = Math.ceil(this.currentMonster.maxHealth * 0.3);
 		if (this.currentMonster.health <= lowHealth ) {
-			this.monsterHealthText.addColor( '#f23918', 0 );
+			this.monsterHealthText.addColor( '#ea5311', 0 );
 		} else if ( this.currentMonster.health <= medHealth ) {
-			this.monsterHealthText.addColor( '#fd0a0a', 0 );
+			this.monsterHealthText.addColor( '#e3da13', 0 );
 		}
-
-		// update the health text
-		this.monsterHealthText.text = this.currentMonster.alive ? this.currentMonster.health + ' HP' : 'DEAD';
 	}
 });
 
