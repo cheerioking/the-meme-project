@@ -2,7 +2,7 @@ var game = new Phaser.Game(900, 600, Phaser.AUTO, '');
 
 game.state.add('play', {
     preload: function() {
-        this.game.load.image('wc', 'assets/background/wc.png');
+        this.game.load.image('google', 'assets/background/google.png');
         
 
         this.game.load.image('john-cena', 'assets/meme-enemies/john-cena.png');
@@ -12,12 +12,10 @@ game.state.add('play', {
         this.game.load.image('spongegar', 'assets/meme-enemies/spongegar.png');
         this.game.load.image('dang-daniel', 'assets/meme-enemies/dang-daniel.png');
         this.game.load.image('nyan-cat', 'assets/meme-enemies/nyan-cat.png');
-        this.game.load.image('doge', 'assets/meme-enemies/doge.png');
-        this.game.load.image('chubby-bubbles', 'assets/meme-enemies/chubby-bubbles.png')
+        this.game.load.image('doge', 'assets/meme-enemies/doge.png'); 
         this.game.load.image('trollface', 'assets/meme-enemies/trollface.png')
         this.game.load.image('yuno', 'assets/meme-enemies/yuno.png')
         this.game.load.image('grumpy-cat', 'assets/meme-enemies/grumpy-cat.png')
-        this.game.load.image('be-like-bill', 'assets/meme-enemies/be-like-bill.png')
         this.game.load.image('pepe', 'assets/meme-enemies/pepe.png') 
         this.game.load.image('patrick', 'assets/meme-enemies/patrick.png')
         this.game.load.image('spoderman', 'assets/meme-enemies/spoderman.jpg')
@@ -109,14 +107,12 @@ game.state.add('play', {
             {name: 'D##n Daniel',         image: 'dang-daniel',       maxHealth: 5},
             {name: 'Nyan Cat',            image: 'nyan-cat',          maxHealth: 15},
             {name: 'Doggo',               image: 'doge',              maxHealth: 15},
-            {name: 'Chubby Bubbles',      image: 'chubby-bubbles',    maxHealth: 15},
             {name: 'Troll Face',          image: 'trollface',         maxHealth: 10},
             {name: 'Y U NO',              image: 'yuno',              maxHealth: 30},
             {name: 'Grumpy Cat',          image: 'grumpy-cat',        maxHealth: 10},
-            {name: 'Bill',                image: 'be-like-bill',      maxHealth: 2},
             {name: 'Pepe',                image: 'pepe',              maxHealth: 40},
             {name: 'Patrick',             image: 'patrick',           maxHealth: 25},
-            {name: 'Spooderman',          image: 'spoderman',        maxHealth: 15},
+            {name: 'Spooderman',          image: 'spoderman',         maxHealth: 15},
        
 
         ];
