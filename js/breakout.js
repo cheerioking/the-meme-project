@@ -39,7 +39,7 @@ function create() {
     paddle.anchor.set(0.5,1);
     game.physics.enable(paddle, Phaser.Physics.ARCADE);
     paddle.body.immovable = true;
-
+    
     initBricks();
 
     var textStyle = { font: '24px Bangers', fill: '#0095DD' };
