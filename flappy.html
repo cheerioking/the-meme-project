@@ -7,18 +7,26 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/theeleventhpickle.css" media="screen">
-    <script src="lib/phaser.min.js"></script>
-    <script src="src/game.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/flappy.css" media="screen">
+    <script src="src/flappy.js"></script>
 
-    <title>Meme Clicker</title>
+    <title>Flappy Pepe</title>
+
+    <style>
+        canvas {
+            border:3px solid #000000;
+            background-color: #CECECE;
+        }
+    </style>
+
   </head>
 
-  <body>
+  <body onload="startGame()">
 
     <header>
 <div style="font-family: Righteous"></div>
       <div class="container">
-        <h1>Meme Clicker</h1>
+        <h1>Flappy Pepe</h1>
         <h2></h2>
           <div class="bangers font-load">Font Loader</div>
           <div class="oswald font-load">Font Loader</div>
@@ -27,13 +35,16 @@
           <a href="https://twitter.com/Pickles_Roblox" class="">My Twitter</a>
           <a href="https://vine.co/Pickles" class="green">My Vine</a>
           <a href="http://steamcommunity.com/groups/PicklesGamingMadness#" class="white">Steam Group</a>
-           <a href="/flappy.html" class="">Flappy Pepe</a>
+            <a href="index.html" class="orange">Meme Clicker</a>
         </section>
       </div>
     </header>
 
-    <div class="container">
-      <section id="main_content"></section>
-    </div>
+    <div id="flappy-container">
+      <section id="main_content">
+        <div id="canvas-marker"></div>
+        </section>
+            <button onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.11)" class="fly-button">Fly!</button>
+                </div>
   </body>
 </html>

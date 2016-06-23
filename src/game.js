@@ -7,7 +7,7 @@ game.state.add('play', {
 		/**
 		 * Background.
 		 */
-		this.game.load.image('g', 'assets/background/google.png');
+		this.game.load.image('g', 'assets/background/g.png');
 
 		/**
 		 * Monsters.
@@ -43,9 +43,9 @@ game.state.add('play', {
 
 		// build panel for upgrades
 		var bmd = this.game.add.bitmapData(245, 500);
-		bmd.ctx.fillStyle = '#FFFFFF';
+		bmd.ctx.fillStyle = '#c1c1c1';
 		bmd.ctx.strokeStyle = '#35371c';
-		bmd.ctx.lineWidth = 2;
+		bmd.ctx.lineWidth = 5;
 		bmd.ctx.fillRect(0, 0, 245, 500);
 		bmd.ctx.strokeRect(0, 0, 245, 500);
 		this.game.cache.addBitmapData('upgradePanel', bmd);
@@ -61,7 +61,7 @@ game.state.add('play', {
 		// the main player
 		this.player = {
 			clickDmg: 1,
-			gold: 50,
+			gold: 0,
 			dps: 0
 		};
 
