@@ -15,7 +15,7 @@ var myGameArea = {
         this.canvas.width =800;
         this.canvas.height = 450;
         this.context = this.canvas.getContext("2d");
-        marker = document.getElementById("canvas-marker");
+        var marker = document.getElementById("canvas-marker");
         marker.appendChild(this.canvas);
         this.frameNo = 0;
         this.interval = setInterval(updateGameArea, 20);
