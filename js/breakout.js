@@ -21,7 +21,7 @@ function startGame() {
     var x = 0, y = 12;
     myGameArea.start();
     myball = new component(5, 3, "black", myGameArea.canvas.width / 2 - 2.5 - 100, 110);
-    myGamePiece = new component(120, 5, "red", myGameArea.canvas.width / 2 - 60, myGameArea.canvas.height - 10);
+    myGamePiece = new component(120, 5, "black", myGameArea.canvas.width / 2 - 60, myGameArea.canvas.height - 10);
     for (i = 0; i < 30; i++) {
         if ((x + 60) > myGameArea.canvas.width) {
             x = 0;
@@ -29,7 +29,7 @@ function startGame() {
         }
         if (x == 0) {x = 30; } // Total Bars
         x = x + 0; // Left Padding
-        myObstacles.push(new component(120, 7, "green", x, y)); // Bar width/height
+        myObstacles.push(new component(120, 7, "white", x, y)); // Bar width/height
         x = x + 125; // Bar width + right padding
     }
     myGameArea.setsize();

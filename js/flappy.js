@@ -40,7 +40,7 @@ function component(width, height, color, x, y, type) {
         ctx = myGameArea.context;
         if (this.type == "text") {
             ctx.font = this.width + " " + this.height;
-            ctx.fillStyle = color;
+            ctx.fillStyle = color; "black"
             ctx.fillText(this.text, this.x, this.y);
         } else {
             ctx.fillStyle = color;
