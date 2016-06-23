@@ -174,19 +174,19 @@ game.state.add('play', {
 		 * Monsters.
 		 */
 		var monsterData = [
-			{name: 'John Cena',      image: 'john-cena',      maxHealth: 10},
-			{name: 'Dat Boi',        image: 'dat-boi',        maxHealth: 35},
+			{name: 'John Cena',      image: 'john-cena',      maxHealth: 5},
+			{name: 'Dat Boi',        image: 'dat-boi',        maxHealth: 20},
 			{name: 'Lenny',          image: 'lenny-face',     maxHealth: 2},
-			{name: 'Spongegar',      image: 'spongegar',      maxHealth: 10},
+			{name: 'Spongegar',      image: 'spongegar',      maxHealth: 5},
 			{name: 'Dang Daniel',    image: 'dang-daniel',    maxHealth: 5},
 			{name: 'Nyan Cat',       image: 'nyan-cat',       maxHealth: 15},
-			{name: 'Doggo',          image: 'doge',           maxHealth: 15},
-			{name: 'Troll Face',     image: 'trollface',      maxHealth: 10},
-			{name: 'Y U NO',         image: 'yuno',           maxHealth: 30},
-			{name: 'Grumpy Cat',     image: 'grumpy-cat',     maxHealth: 10},
+			{name: 'Doggo',          image: 'doge',           maxHealth: 10},
+			{name: 'Troll Face',     image: 'trollface',      maxHealth: 5},
+			{name: 'Y U NO',         image: 'yuno',           maxHealth: 20},
+			{name: 'Grumpy Cat',     image: 'grumpy-cat',     maxHealth: 5},
 			{name: 'Pepe',           image: 'pepe',           maxHealth: 40},
-			{name: 'Patrick',        image: 'patrick',        maxHealth: 25},
-			{name: 'Spoderman',     image: 'spoderman',      maxHealth: 15}
+			{name: 'Patrick',        image: 'patrick',        maxHealth: 15},
+			{name: 'Spoderman',     image: 'spoderman',       maxHealth: 10}
 		];
 		this.monsters = this.game.add.group();
 
