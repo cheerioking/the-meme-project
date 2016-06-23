@@ -156,8 +156,7 @@ game.state.add('play', {
 				}
 			}    
         ];
-
-
+		
 		var button;
 		upgradeButtonsData.forEach(function (buttonData, index) {
 			button = state.game.add.button(0, (77 * index), state.game.cache.getBitmapData('button'));

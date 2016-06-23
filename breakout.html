@@ -8,23 +8,16 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/theeleventhpickle.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/breakout.css" media="screen">
+    <script src="lib/phaser.min.js"></script>
     <script src="js/breakout.js"></script>
 
     <title>Pepe Breakout</title>
-
-      <style>
-          canvas {
-              border:3px solid #000000;
-              background-color: #CECECE;
-              max-width: 800px;
-          }
-      </style>
   </head>
 
-  <body onload="startGame();">
+  <body>
 
     <header>
-<div style="font-family: Righteous"></div>
+        <div class="font-load bangers"></div>
       <div class="container">
         <h1>Meme Clicker</h1>
         <h2></h2>
@@ -45,9 +38,6 @@
       <section id="main_content">
           <div id="canvas-marker"></div>
       </section>
-        <button onclick="playgame()" class="breakout-play-button">Play Game</button>
-        <button onclick="pausegame()" class="breakout-pause-button">Pause Game</button>
-        <button onclick="resetgame()" class="breakout-pause-button">Reset Game</button>
     </div>
   </body>
 </html>
