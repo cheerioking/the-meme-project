@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'Bangers';
-    src: url('../fonts/bangers.ttf');
+    src: url('../assets/fonts/bangers.ttf');
 }
 
 @font-face {
     font-family: 'Oswald';
-    src: url('../fonts/oswald-regular.ttf');
+    src: url('../assets/fonts/oswald-regular.ttf');
 }
 
 .font-load {
