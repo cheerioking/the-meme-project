@@ -7,7 +7,7 @@ game.state.add('play', {
 		/**
 		 * Background.
 		 */
-		this.game.load.image('google', 'assets/background/google.png');
+		this.game.load.image('wc', 'assets/background/wc.png');
 
 		/**
 		 * Monsters.
@@ -37,27 +37,29 @@ game.state.add('play', {
 
 		/**
 		 * Upgrades.
-		 */
-		this.game.load.image('auto-memes', 'assets/pics/auto-memes.png');
-		this.game.load.image('better-memes', 'assets/pics/better-memes.png');
-
+		 */ 
+		this.game.load.image('auto-memes',          'assets/buttons/auto-memes.png');
+		this.game.load.image('better-memes',        'assets/buttons/better-memes.png');
+        this.game.load.image('dogebutton',          'assets/buttons/doge.png');
+		this.game.load.image('doge-wizard',         'assets/buttons/doge-wizard.png');
+		
 		// build panel for upgrades
 		var bmd = this.game.add.bitmapData(245, 500);
-		bmd.ctx.fillStyle = '#c1c1c1';
-		bmd.ctx.strokeStyle = '#35371c';
-		bmd.ctx.lineWidth = 5;
+		bmd.ctx.fillStyle = '#eee';
+		bmd.ctx.strokeStyle = '#aaa';
+		bmd.ctx.lineWidth = 2;
 		bmd.ctx.fillRect(0, 0, 245, 500);
 		bmd.ctx.strokeRect(0, 0, 245, 500);
 		this.game.cache.addBitmapData('upgradePanel', bmd);
 
-		var buttonImage = this.game.add.bitmapData(225, 48);
-		buttonImage.ctx.fillStyle = '#E8522D';
+		var buttonImage = this.game.add.bitmapData(225, 75);
+		buttonImage.ctx.fillStyle = '#9BF780';
 		buttonImage.ctx.strokeStyle = '#00000';
 		buttonImage.ctx.lineWidth = 2;
-		buttonImage.ctx.fillRect(0, 0, 225, 48);
-		buttonImage.ctx.strokeRect(0, 0, 225, 48);
+		buttonImage.ctx.fillRect(0, 0, 225, 75);
+		buttonImage.ctx.strokeRect(0, 0, 225, 75);
 		this.game.cache.addBitmapData('button', buttonImage);
-
+   
 		// the main player
 		this.player = {
 			clickDmg: 1,
@@ -81,7 +83,7 @@ game.state.add('play', {
 		 */
 		this.background = this.game.add.group();
 		// setup each of our background layers to take the full screen
-		['google']
+		['wc']
 			.forEach(function (image) {
 				var bg = state.game.add.tileSprite(0, 0, state.game.world.width,
 					state.game.world.height, image, '', state.background);
@@ -98,24 +100,58 @@ game.state.add('play', {
 
 		var upgradeButtonsData = [
 			{
-				icon: 'auto-memes', name: 'Hax', level: 0, cost: 5, purchaseHandler: function (button, player) {
+				icon: 'auto-memes', 
+				name: 'Hax', 
+				level: 0, 
+				cost: 5, 
+				desc: '+1 Damage per Click', 
+				purchaseHandler: function (button, player) {
 					player.clickDmg += 1;
 				}
 			},
 			{
-				icon: 'better-memes', name: 'Auto Hax', level: 0, cost: 25, purchaseHandler: function (button, player) {
-					player.dps += 5;
+				icon: 'better-memes', 
+				name: 'Auto Hax', 
+				level: 0, 
+				cost: 15, 
+				desc: '+1 DPS', 
+				purchaseHandler: function (button, player) {
+					player.dps += 1;
+				}
+			},
+			{
+				icon: 'dogebutton', 
+				name: 'Attack Doggo', 
+				level: 0, 
+				cost: 150, 
+				desc: '+1 Critical Strike Chance', 
+				purchaseHandler: function (button, player) {
+					player.clickDmg += 10;
+				}
+			},
+		    {
+				icon: 'doge-wizard', 
+				name: 'Doggo Wizard', 
+				level: 0, 
+				cost: 300, 
+				desc: 'Supercharge your DPS for 30 secs', 
+				purchaseHandler: function (button, player) {
+					player.dps += 10;
 				}
 			}
+            
+
 		];
+
 
 		var button;
 		upgradeButtonsData.forEach(function (buttonData, index) {
-			button = state.game.add.button(0, (50 * index), state.game.cache.getBitmapData('button'));
+			button = state.game.add.button(0, (77 * index), state.game.cache.getBitmapData('button'));
 			button.icon = button.addChild(state.game.add.image(6, 6, buttonData.icon));
 			button.text = button.addChild(state.game.add.text(48, 6, buttonData.name + ': ' + buttonData.level, {font: '16px Oswald'}));
 			button.details = buttonData;
 			button.costText = button.addChild(state.game.add.text(48, 24, 'Cost: ' + buttonData.cost, {font: '16px Oswald'}));
+			button.desc = button.addChild(state.game.add.text(6, 42, buttonData.desc, {font: '13px Oswald'}).addColor( '#000', 0 ));
 			button.events.onInputDown.add(state.onUpgradeButtonClick, state);
 
 			upgradeButtons.addChild(button);
