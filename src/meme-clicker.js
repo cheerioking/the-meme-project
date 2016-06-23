@@ -47,6 +47,7 @@ game.state.add('play', {
 		this.game.load.image('better-memes', buttonsDir + 'better-memes.png');
 		this.game.load.image('dogebutton',   buttonsDir + 'doge.png');
 		this.game.load.image('doge-wizard',  buttonsDir + 'doge-wizard.png');
+		this.game.load.image('doge-archer',  buttonsDir + 'doge-archer.png');
 		
 		// build panel for upgrades
 		var bmd = this.game.add.bitmapData(245, 500);
@@ -139,14 +140,22 @@ game.state.add('play', {
 				name: 'Doggo Wizard', 
 				level: 0, 
 				cost: 300, 
-				desc: 'Supercharge your DPS for 30 secs', 
+				desc: 'Supercharge your DPS', 
 				purchaseHandler: function (button, player) {
-					player.dps += 10;
+					player.dps += 20;
 				}
-			}
-            
-
-		];
+			},
+            {
+				icon: 'doge-archer', 
+				name: 'Doggo Archer', 
+				level: 0, 
+				cost: 450, 
+				desc: 'Supercharge your DPC', 
+				purchaseHandler: function (button, player) {
+					player.clickDmg += 20;
+				}
+			}    
+        ];
 
 
 		var button;
