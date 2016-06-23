@@ -10,6 +10,9 @@ function pausegame() {
 }
 
 function resetgame() {
+    myGameArea.clear();
+    myball.speedY = 1;
+    myball.speedX = 1;
     startGame();
 }
 
@@ -29,7 +32,7 @@ function startGame() {
         }
         if (x == 0) {x = 30; } // Total Bars
         x = x + 0; // Left Padding
-        myObstacles.push(new component(120, 7, "green", x, y)); // Bar width/height
+        myObstacles.push(new component(120, 7, "green", x, y, true)); // Bar width/height
         x = x + 125; // Bar width + right padding
     }
     myGameArea.setsize();
@@ -41,7 +44,7 @@ var myGameArea = {
     canvas : document.createElement("canvas"),
     start : function() {
         this.canvas.width = 800;
-        this.canvas.height = 150;
+        this.canvas.height = 300;
         this.pause = false;
         this.frameNo = 0;
         this.canvas.style.cursor = "none"; //hide the original cursor
@@ -89,7 +92,7 @@ var myGameArea = {
 
 }
 
-function component(width, height, color, x, y) {
+function component(width, height, color, x, y, border) {
     this.width = width;
     this.height = height;
     this.speedX = 0;
@@ -100,6 +103,11 @@ function component(width, height, color, x, y) {
         ctx = myGameArea.context;
         ctx.fillStyle = color;
         ctx.fillRect(this.x, this.y, this.width, this.height);
+        if ( border ) {
+            ctx.strokeStyle = 'black';
+            ctx.lineWidth = 1;
+            ctx.strokeRect(this.x, this.y, this.width, this.height);
+        }
     }
     this.crashLeft = function(otherobj) {
         var myleft = this.x;
