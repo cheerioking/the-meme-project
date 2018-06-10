@@ -20,7 +20,7 @@ game.state.add('play', {
 		 * These need to match the monster names
 		 * in var monsterData inside create().
 		 */
-		this.game.load.image('john-ceni',   enemiesDir + 'john-cena.png');
+		this.game.load.image('john-cena',   enemiesDir + 'john-cena.png');
 		this.game.load.image('dat-boi',     enemiesDir + 'dat-boi.png');
 		this.game.load.image('lenny-face',  enemiesDir + 'lenny-face.png');
 		this.game.load.image('spongegar',   enemiesDir + 'spongegar.png');
@@ -127,7 +127,7 @@ game.state.add('play', {
 			},
 			{
 				icon: 'dogebutton', 
-				name: 'Attack Doggo', 
+				name: 'Attack Dogger', 
 				level: 0, 
 				cost: 150, 
 				desc: '+1 Critical Strike Chance', 
